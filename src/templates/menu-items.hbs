@@ -1,0 +1,29 @@
+{{#each this}}
+
+<li>
+    <div>
+
+
+        <a href="{{url}}" target="_blank" rel="noopener noreferrer">{{name}}</a>
+        <img src="{{flag}}" alt="" width="300">
+        <h2>Capital:
+            <span>{{capital}}</span>
+        </h2>
+
+        <h2>Population:
+            <span>{{population}}</span>
+
+        </h2>
+
+        <ul class="tag-list">
+            <h2>Languages:</h2>
+            {{#each languages}}
+
+            <li class="tag-list__item">{{this.name}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</li>
+
+
+{{/each}}

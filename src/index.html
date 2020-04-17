@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
+    <title>Countries</title>
 
     <!-- Don't forget to delete this style tag. -->
     <style>
-      body {
+      /* body {
         min-height: 100vh;
         margin: 0;
         display: flex;
@@ -16,30 +16,34 @@
         justify-content: center;
       }
 
-      .intro {
+      /* .intro {
         text-align: center;
-      }
+      } */
 
-      .intro h1 {
+      /* .intro h1 {
         margin-top: 0;
         font-weight: 500;
         font-size: 40px;
-      }
+      } */
 
-      .intro img {
+      /* .intro img {
         display: block;
         max-width: 100%;
         height: auto;
-      }
+      }  */
     </style>
   </head>
 
   <body>
     <article class="intro">
-      <h1>Webpack starter kit</h1>
+      <form class="search-form js-search-form" id="search-form">
+        <input type="text" name="query" placeholder="Enter city name..." />
+        <button type="submit">Get country</button>
+      </form>
 
+      <ul class="countries js-countries"></ul>
       <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
+      <!-- <img src="./images/intro.png" alt="" width="640" /> -->
     </article>
   </body>
 </html>
