@@ -24,6 +24,7 @@
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
+    "@pnotify/core": "^5.0.0",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
@@ -50,6 +51,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "handlebars": "^4.7.3"
+    "handlebars": "^4.7.6",
+    "lodash.chunk": "^4.2.0",
+    "lodash.debounce": "^4.0.8",
+    "material-design-icon-fonts": "^3.0.1",
+    "material-design-icons": "^3.0.1",
+    "pnotify": "^4.0.0"
   }
 }

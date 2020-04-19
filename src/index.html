@@ -36,12 +36,15 @@
 
   <body>
     <article class="intro">
-      <form class="search-form js-search-form" id="search-form">
-        <input type="text" name="query" placeholder="Enter city name..." />
-        <button type="submit">Get country</button>
-      </form>
+      <input
+        class="search-input js-search-input"
+        type="text"
+        name="query"
+        placeholder="Enter country "
+      />
 
-      <ul class="countries js-countries"></ul>
+      <ul class="countries js-countries__links"></ul>
+      <section class="js-countries__country"></section>
       <!-- HTML image reference example. -->
       <!-- <img src="./images/intro.png" alt="" width="640" /> -->
     </article>

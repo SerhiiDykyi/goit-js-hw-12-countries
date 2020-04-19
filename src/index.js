@@ -1,22 +1,31 @@
-// import './js/all-code';
 import './styles.css';
-
 import fetchCountry from './js/fetchCountries';
 import updateCountryMarkup from './js/update-country-markup';
+import refs from './js/refs';
 
-const refs = {
-  countryContainer: document.querySelector('.js-countries'),
-  searchForm: document.querySelector('.js-search-form'),
-};
+// import PNotify from 'pnotify/dist/es/PNotify';
+// import 'pnotify/dist/es/PNotifyStyleMaterial';
+// import 'material-design-icons/iconfont/material-icons.css';
+// PNotify.defaults.styling = 'material';
+// PNotify.defaults.icon = 'material';
 
-refs.searchForm.addEventListener('submit', event => {
-  event.preventDefault();
+const debounce = require('lodash.debounce');
 
-  const form = event.currentTarget;
-  const inputValue = form.elements.query.value;
-  console.log(inputValue);
+const debounceCallback = debounce(event => {
+  let inputValue = event.target.value;
 
   refs.countryContainer.innerHTML = '';
-  form.reset();
-  fetchCountry(inputValue).then(updateCountryMarkup);
-});
+
+  fetchCountry(inputValue).then(
+    updateCountryMarkup,
+    console.log('Почему я вызываюсь, если вернулась ошибка???'),
+  );
+  // .catch(
+  //   PNotify.error({
+  //     title: 'Oh No!',
+  //     text: 'Enter the name of the country correctly!!',
+  //   }),
+  // );
+}, 1000);
+
+refs.searchForm.addEventListener('input', debounceCallback);
