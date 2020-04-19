@@ -9,22 +9,25 @@ PNotify.defaults.styling = 'material';
 PNotify.defaults.icon = 'material';
 
 function updateCountryMarkup(nameCountry) {
+  console.log(nameCountry);
   if (!nameCountry.length) {
-    return;
+    return PNotify.error({
+      title: 'Oh No!',
+      text: 'Enter the country name correctly!!',
+    });
   }
   if (nameCountry.length === 1) {
     const markup = countri(nameCountry);
     refs.countryContainer.insertAdjacentHTML('beforeend', markup);
-    PNotify.success({
+    return PNotify.success({
       title: 'Success!',
       text: 'The country you were looking for!',
     });
-    return;
   }
   if (nameCountry.length > 10) {
     return PNotify.error({
       title: 'Oh No!',
-      text: 'Enter the country name correctly!',
+      text: 'Too many matches found. Please enter a more specific query!',
     });
   }
   const markup = countriesLinks(nameCountry);

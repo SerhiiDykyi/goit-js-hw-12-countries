@@ -17,11 +17,12 @@ const debounceCallback = debounce(event => {
   refs.countryContainer.innerHTML = '';
 
   fetchCountry(inputValue).then(updateCountryMarkup);
+
   // .catch(
-  //   PNotify.error({
-  //     title: 'Oh No!',
-  //     text: 'Enter the country name correctly!!',
-  //   }),
+  // PNotify.error({
+  //   title: 'Oh No!',
+  //   text: 'Enter the country name correctly!!',
+  // }),
   // );
 }, 1000);
 
