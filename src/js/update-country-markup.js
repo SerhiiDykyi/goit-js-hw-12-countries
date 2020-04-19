@@ -9,10 +9,9 @@ PNotify.defaults.styling = 'material';
 PNotify.defaults.icon = 'material';
 
 function updateCountryMarkup(nameCountry) {
-  if (!nameCountry) {
+  if (!nameCountry.length) {
     return;
   }
-
   if (nameCountry.length === 1) {
     const markup = countri(nameCountry);
     refs.countryContainer.insertAdjacentHTML('beforeend', markup);
@@ -25,7 +24,7 @@ function updateCountryMarkup(nameCountry) {
   if (nameCountry.length > 10) {
     return PNotify.error({
       title: 'Oh No!',
-      text: 'Too many matches found. Please enter a more specific query!',
+      text: 'Enter the country name correctly!',
     });
   }
   const markup = countriesLinks(nameCountry);
