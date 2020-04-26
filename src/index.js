@@ -3,12 +3,6 @@ import fetchCountry from './js/fetchCountries';
 import updateCountryMarkup from './js/update-country-markup';
 import refs from './js/refs';
 
-// import PNotify from 'pnotify/dist/es/PNotify';
-// import 'pnotify/dist/es/PNotifyStyleMaterial';
-// import 'material-design-icons/iconfont/material-icons.css';
-// PNotify.defaults.styling = 'material';
-// PNotify.defaults.icon = 'material';
-
 const debounce = require('lodash.debounce');
 
 const debounceCallback = debounce(event => {
@@ -17,13 +11,6 @@ const debounceCallback = debounce(event => {
   refs.countryContainer.innerHTML = '';
 
   fetchCountry(inputValue).then(updateCountryMarkup);
-
-  // .catch(
-  // PNotify.error({
-  //   title: 'Oh No!',
-  //   text: 'Enter the country name correctly!!',
-  // }),
-  // );
 }, 1000);
 
 refs.searchForm.addEventListener('input', debounceCallback);
